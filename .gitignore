@@ -1,2 +1,3 @@
 .venv/*
 dev_env.ipynb
+__pycache__/*
