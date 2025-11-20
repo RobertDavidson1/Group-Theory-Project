@@ -1,0 +1,114 @@
+\documentclass[final]{beamer}
+
+
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[orientation=portrait,size=a0,scale=1]{beamerposter}
+\usetheme{gemini}
+\usecolortheme{gemini}
+\usepackage{graphicx}
+\usepackage{booktabs, tabularx}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{mwe} 
+\pgfplotsset{compat=1.14}
+\usepackage{anyfontsize}
+\usepackage{qrcode}
+\usepackage{caption}
+\usepackage{subcaption}
+\usetikzlibrary{calc}
+
+
+
+
+\usepackage{amsmath, amssymb}
+\usepackage[numbers,super,sort&compress]{natbib}
+\setcitestyle{square}
+
+\renewcommand{\thesubfigure}{\thefigure.\arabic{subfigure}}
+\captionsetup[subfigure]{labelformat=simple, labelsep=colon, name=Fig}
+
+
+
+\newlength{\sepwidth}
+\newlength{\colwidth}
+\setlength{\sepwidth}{0.025\paperwidth}
+\setlength{\colwidth}{0.45\paperwidth}
+
+\newcommand{\separatorcolumn}{\begin{column}{\sepwidth}\end{column}}
+
+
+\title{A Random Walk on \texorpdfstring{$\mathbb{Z}_n \times \mathbb{Z}_n$}{Zn x Zn}}
+
+\author{Robert Davidson}
+
+
+
+\footercontent{
+  \normalsize Simulations and Figures implemented with Figma, TikZ and Python \small(NumPy, SciPy, Seaborn, Pandas, Matplotlib) \hfill
+  \normalsize Project GitHub Repository \quad \href{https://github.com/RobertDavidson1/Group-Theory-Project}{\qrcode{https://github.com/RobertDavidson1/Group-Theory-Project}} 
+}
+
+
+
+
+
+
+
+\begin{document}
+
+\begin{frame}[t]
+\begin{columns}[t]
+\separatorcolumn
+
+\begin{column}{\colwidth}
+
+  \begin{exampleblock}{What is a Random Walk? }
+    \input{blocks/1_what_is_a_random_walk.tex}
+    
+  \end{exampleblock}
+
+  \begin{block}{How does this relate to Group Theory?}
+      \input{blocks/2_how_does_this_relate_to_group_theory.tex}
+  \end{block}
+  
+  \begin{alertblock}{What if we restrict our walker?}
+    \input{blocks/3_what_if_we_restrict_our_walker.tex}
+  \end{alertblock}
+
+\end{column}
+
+\separatorcolumn
+
+\begin{column}{\colwidth}
+  \begin{block}{Why can we only reach uniformity for odd $\boldsymbol{n}$?}
+    \input{blocks/4_why_can_we_only_reach_uniform_for_odd_n.tex}
+  \end{block}
+
+  \begin{exampleblock}{What if our walker could walk in two dimensions?}
+    \input{blocks/5_what_if_our_walker_could_walk_in_2D.tex}
+  \end{exampleblock}
+
+  \begin{block}{Summary and Applications}
+    \input{blocks/6_summary_and_Applications}
+  \end{block}
+
+
+  \begin{block}{References}
+    \nocite{*}
+    \scriptsize
+    \bibliographystyle{unsrtnat}
+    \bibliography{references}
+  \end{block}
+  
+
+\end{column}
+\separatorcolumn
+
+
+
+\end{columns}
+\end{frame}
+
+\end{document}
