@@ -1,3 +1,7 @@
+## Poster
+
+You can click [here](https://robertdavidson1.github.io/Group-Theory-Project/poster.pdf) to view the poster
+
 ## To Do:
 
 -   Add the Python files used for generating the figures
