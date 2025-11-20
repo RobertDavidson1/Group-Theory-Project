@@ -5,7 +5,7 @@
 
 ## Dependencies
 
--   [gemini](https://github.com/anishathalye/gemini) a modern $\LaTeX$ `beamerposter` theme
+-   [gemini](https://github.com/anishathalye/gemini) a modern LaTeX `beamerposter` theme
 -   Python packages listed in `requirements.txt`
     for chart generation
 
