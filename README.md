@@ -2,7 +2,7 @@
 
 You can click [here](https://robertdavidson1.github.io/Group-Theory-Project/poster.pdf) to view the poster
 
-## To Do:
+## To Do
 
 -   Add the Python files used for generating the figures
     -   They're a bit of a mess right now and need refactoring before I include them
