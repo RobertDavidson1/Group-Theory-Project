@@ -1,0 +1,49 @@
+Now that we've studied the walk through the lens of group theory on the 1-Dimensional cyclic group, $\mathbb{Z}_n$, we ask what happens when we allow the walker to move in 2-Dimensions? \\
+\begin{minipage}[t]{0.62\textwidth}
+    \vspace{0pt}
+    More specifically, we want our walker to walk on the Direct Product \cite{wiki_direct_product_of_groups} \cite{bikenaga_direct_product}:
+    $$\mathbb{Z}_n \times \mathbb{Z}_n = \{(x, y) \mid x \in \mathbb{Z}_n, y \in \mathbb{Z}_n \}$$
+    where the group operation is defined by component-wise addition $\bmod \; n$ 
+    $$(x_1, y_1) + (x_2, y_2) = (x_1 + x_2 \bmod n,\; y_1 + y_2 \bmod n)$$
+    This group inherits group properties from $\mathbb{Z}_n$, specifically, it has:
+    \vspace{-1em}
+    \begin{itemize}
+        \item \textbf{Identity} $e = (0, 0)$\\
+        \item \textbf{Inverse} $(-x, -y)\bmod n$\\
+    \end{itemize}
+    The group is a finite abelian group and has generating set $S$:
+    $$S =  \{(1,0), (0,1), (-1, 0), (0,-1)\}$$
+    Starting at the identity, $(0,0)$, we define our walker's position after $t$ random steps the same as before:
+    $$P_t = \sum_{i=1}^t s_i \mod n \quad s_i \in S$$
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.34\textwidth}
+        \vspace{0pt}
+        \centering
+        \includegraphics[width=0.5\textwidth]{../figs/WalkPath_Z6xZ6_step1.pdf}
+        \vspace{0.2cm}
+        \includegraphics[width=0.5\textwidth]{../figs/WalkPath_Z6xZ6_step3.pdf}
+        \vspace{0.2cm}
+        \includegraphics[width=0.5\textwidth]{../figs/WalkPath_Z6xZ6_step7.pdf}
+    \captionof{figure}{Example path on $\mathbb{Z}_6 \times \mathbb{Z}_6$.}
+\end{minipage}
+Now, our walker is walking on the $n \times n$ grid, where stepping off one side returns the walker on the opposite side. An example path is shown above. We might ask the question, does the parity problem in the $1$-Dimensional case still arise in this $2$-Dimensional case? 
+
+As we see below, for even $n$, the same restriction occurs, and the walker can only reach half of the grid at any fixed time, so the final positions end up on the odd or the even half of the $n \times n$ grid (left heatmap). When $n$ is odd, the restriction breaks, and the final positions are free to spread across all points, allowing the distribution to become uniform (right heatmap).
+\begin{figure}[htbp]
+    \centering
+
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=0.6\textwidth]{../figs/HeatmapZ8.pdf} 
+        \caption{Final positions on $\mathbb{Z}_8 \times \mathbb{Z}_8$.}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=0.6\textwidth]{../figs/HeatmapZ9.pdf} 
+        \caption{Final positions on $\mathbb{Z}_9 \times \mathbb{Z}_9$.}
+    \end{subfigure}
+
+    \caption{Heatmap of final positions on even and odd $n$  \;($30,000$ walkers, $10,000$ steps).}
+    \label{fig:even_vs_odd_zn_x_zn_heatmap}
+\end{figure}

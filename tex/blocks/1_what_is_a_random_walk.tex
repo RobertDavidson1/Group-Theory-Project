@@ -1,0 +1,18 @@
+A random walk at its simplest is a process that moves step by step, where each new step is the current position plus some random change. Random walks are used in a wide range of fields, from finance, where they model how stock prices move, to brain research, where they explore how neurons fire and interact, and even to computer science, where they're used to estimate the size of the World Wide Web. \cite{wiki_random_walk}. 
+\begin{figure}
+  \centering
+  \includegraphics[width=0.6\textwidth]{../figs/stock_path.pdf}
+  \caption{A simple stock price path ($P_t$ at step $t$, with $x = 100$ and $t = 200$).}
+\end{figure}
+A simple example of a random walk is the walk on the integer line\cite{wiki_random_walk}, $\mathbb{Z}$, we start at $x$ and at each step, $t$, we randomly choose a move from the sample space:
+$$\Omega = \{+1, -1\}$$
+We let $P_t$ denote our position at step $t$, then, following Lawler\cite{lawler_simple_random_walk}, we write:
+$$P_t = x + X_1 + \dots + X_t$$
+where each $X_i$ is an independent random variable with
+$$P(X_i =1) = P(X_i = -1) = 0.5$$
+so our random variables dictate whether we move up or down the integer number line with equal probability. 
+\begin{figure}
+  \centering
+  \includegraphics[width=0.6\textwidth]{../figs/RandomWalkZ.pdf}
+  \caption{An example of a random walk on the Integers.}
+\end{figure}

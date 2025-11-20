@@ -1,0 +1,34 @@
+The question arises: what if instead of allowing our walker to walk on the entire integer number line, we restrict them to walking on a finite set of $n$ positions, where moving past the end brings the walker back to the beginning?
+
+More specifically, we want to walk on the finite cyclic abelian group:
+$$\mathbb{Z}_n = \{0,1,2,3,\dots,n-1\}$$
+with group operation addition modulo $n$. This group satisfies the group axioms:
+\begin{itemize}
+    \item \textbf{Closed and Associative} $\hspace{1.75cm}\Rightarrow a + (b+c) \equiv (a+b) + c \mod n \in \mathbb{Z}_n, \quad a,b,c \in \mathbb{Z}_n$
+    \item \textbf{Identity} $e = 0 \hspace{5.5cm}\Rightarrow a + 0 \equiv 0 +a \equiv a \mod n\quad a\in\mathbb{Z}_n$
+    \item \textbf{Inverse} $a^{-1} = (-a \mod n) \hspace{0.5cm}\Rightarrow a + (-a) \equiv 0 \mod n \quad a \in\mathbb{Z}_n$
+\end{itemize}
+The element $1$ still acts as a generator, with $-1$ as its inverse, so the generating set remains the same. Our walk, starting again at $e = 0$, after $t$ steps is given by:
+$$P_t = \sum_{i=1}^t s_i \mod n \quad s_i \in S$$
+Since we've restricted our walker to a finite set of $n$ positions, we might assume that after many steps, with many walkers, each position should be visited equally often and that the distribution of final positions should be uniform. \\[1ex]
+However, this isn't the case, even in this simple group, the group's structure constrains where the walker can be. 
+
+As we see below, the walkers' final positions can only reach a uniform distribution for odd $n$ (right histogram), and for even $n$, they can only occupy half of $\mathbb{Z}_n$ (left histogram).
+\begin{figure}[htbp]
+    \centering
+
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../figs/ZnDist_size6_steps10000.pdf} 
+        \caption{Final positions on $\mathbb{Z}_6$.}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../figs/ZnDist_size7_steps10000.pdf} 
+        \caption{Final positions on $\mathbb{Z}_7$.}
+    \end{subfigure}
+
+    \caption{Histogram of final positions on even and odd $n$  \;($30,000$ walkers, $10,000$ steps).}
+    \label{fig:even_vs_odd_zn}
+\end{figure}
